@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- top bar color -->
+    <color name="top_common_bar_text_normal_color">#fff</color>
+
+</resources>
