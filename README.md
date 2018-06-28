@@ -1,4 +1,7 @@
 ﻿# commontopbar
+
+[ ![Download](https://api.bintray.com/packages/loveit/maven/commontopbar/images/download.svg) ](https://bintray.com/loveit/maven/commontopbar/_latestVersion)
+
 A common topBar library.It looks like android's title bar.
 
 ![此处输入图片的描述][1]
@@ -97,23 +100,35 @@ A common topBar library.It looks like android's title bar.
      <dependency>
       <groupId>party.loveit</groupId>
       <artifactId>commontopbarlibrary</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
       <type>pom</type>
     </dependency>
     
  2.Gradle
 
-     compile 'party.loveit:commontopbarlibrary:1.0.0'
+     compile 'party.loveit:commontopbarlibrary:1.0.1'
      
 3.Ivy
 
-    <dependency org='party.loveit' name='commontopbarlibrary' rev='1.0.0'>
+    <dependency org='party.loveit' name='commontopbarlibrary' rev='1.0.1'>
       <artifact name='$AID' ext='pom'></artifact>
     </dependency>
+    
+    
+    
+    
+**- Update History**
+
+    -v1.0.1
+      add methods：
+      1.setLefTextViewDrawPadding(int size) ；//set DrawPadding
+      2.setLeftTextViewDrawLeft(@DrawableRes int drawableRes)；//set left drawImg
+      3.setLeftTextViewDrawLeft(@NonNull Drawable drawableRes)；//set left drawImg
+      
 
  **- License**
 
-     Copyright 2016 52it.party
+     Copyright 2018 52it.party
     
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

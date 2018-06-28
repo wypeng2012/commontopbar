@@ -22,8 +22,11 @@ public class MeActivity extends AppCompatActivity implements CommonTopBarClick {
         mCommonTopBar.setMidTextMaxLenth("MeCenter".length());
         mCommonTopBar.setMidText("MeCenter");
         mCommonTopBar.isShowLeftView(true);
-        mCommonTopBar.setLeftImage(R.mipmap.friend_btn_back_click);
-
+        //mCommonTopBar.setLeftImage(R.mipmap.friend_btn_back_click);
+        mCommonTopBar.setLeftText("back");
+        mCommonTopBar.setLeftTextViewDrawLeft(R.mipmap.friend_btn_back_click);
+        mCommonTopBar.setLefTextViewDrawPadding(15);
+        mCommonTopBar.setLeftTextSize(24);
 
     }
 

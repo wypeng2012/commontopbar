@@ -11,7 +11,8 @@
         android:gravity="center"
         android:textColor="@color/top_common_bar_text_normal_color"
         android:textSize="@dimen/top_bar_title_text_size"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:background="?attr/selectableItemBackgroundBorderless"/>
 
     <TextView
         android:id="@id/common_top_bar_text_mid"
@@ -37,6 +38,7 @@
         android:clickable="true"
         android:visibility="gone"
         android:textColor="@color/top_common_bar_text_normal_color"
-        android:textSize="@dimen/top_bar_title_text_size" />
+        android:textSize="@dimen/top_bar_title_text_size"
+        android:background="?attr/selectableItemBackground"/>
 
 </RelativeLayout>

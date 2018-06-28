@@ -52,14 +52,14 @@ public class CommonTopBar extends FrameLayout {
      */
     @SuppressLint("InflateParams")
     private void initView() {
-        View view = ((Activity)mContext).getLayoutInflater().inflate(R.layout.common_bar_layout, null);
+        View view = ((Activity) mContext).getLayoutInflater().inflate(R.layout.common_bar_layout, null);
 
         mLeftTextView = (TextView) view.findViewById(R.id.common_top_bar_text_left);
         mLeftTextView.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                if(mCommonTopBarClick != null)
+                if (mCommonTopBarClick != null)
                     mCommonTopBarClick.onClickLeft();
             }
         });
@@ -70,7 +70,7 @@ public class CommonTopBar extends FrameLayout {
 
             @Override
             public void onClick(View v) {
-                if(mCommonTopBarClick != null)
+                if (mCommonTopBarClick != null)
                     mCommonTopBarClick.onClickRight();
             }
         });
@@ -83,20 +83,22 @@ public class CommonTopBar extends FrameLayout {
 
     /**
      * if show right view,default gone
+     *
      * @param isShow
      */
-    public void isShowRightView(boolean isShow){
-        if(mRightTextView != null)
-            mRightTextView.setVisibility(isShow? View.VISIBLE: View.GONE);
+    public void isShowRightView(boolean isShow) {
+        if (mRightTextView != null)
+            mRightTextView.setVisibility(isShow ? View.VISIBLE : View.GONE);
     }
 
     /**
      * 设if show left view,default gone
+     *
      * @param isShow
      */
-    public void isShowLeftView(boolean isShow){
-        if(mLeftTextView != null)
-            mLeftTextView.setVisibility(isShow? View.VISIBLE: View.GONE);
+    public void isShowLeftView(boolean isShow) {
+        if (mLeftTextView != null)
+            mLeftTextView.setVisibility(isShow ? View.VISIBLE : View.GONE);
     }
 
 
@@ -105,7 +107,8 @@ public class CommonTopBar extends FrameLayout {
     }*/
 
     /**
-     *  set click event listener
+     * set click event listener
+     *
      * @param mCommonTopBarClick
      */
     public void setCommonTopBarClick(CommonTopBarClick mCommonTopBarClick) {
@@ -114,11 +117,12 @@ public class CommonTopBar extends FrameLayout {
 
     /**
      * set right view margin right,the param is dp
+     *
      * @param marginRight
      */
-    public void addRightMargin(float marginRight){
-        if(mRightTextView != null){
-            RelativeLayout.LayoutParams mLayoutParams =	(android.widget.RelativeLayout.LayoutParams) mRightTextView.getLayoutParams();
+    public void addRightMargin(float marginRight) {
+        if (mRightTextView != null) {
+            RelativeLayout.LayoutParams mLayoutParams = (android.widget.RelativeLayout.LayoutParams) mRightTextView.getLayoutParams();
             mLayoutParams.rightMargin = DensityUtils.dp2px(mContext, marginRight);
             mRightTextView.setLayoutParams(mLayoutParams);
             mRightTextView.requestLayout();
@@ -127,11 +131,12 @@ public class CommonTopBar extends FrameLayout {
 
     /**
      * set left view margin left,the param is dp
+     *
      * @param marginLeft
      */
-    public void addLeftMargin(float marginLeft){
-        if(mLeftTextView != null){
-            RelativeLayout.LayoutParams mLayoutParams =	(android.widget.RelativeLayout.LayoutParams) mLeftTextView.getLayoutParams();
+    public void addLeftMargin(float marginLeft) {
+        if (mLeftTextView != null) {
+            RelativeLayout.LayoutParams mLayoutParams = (android.widget.RelativeLayout.LayoutParams) mLeftTextView.getLayoutParams();
             mLayoutParams.leftMargin = DensityUtils.dp2px(mContext, marginLeft);
             mLeftTextView.setLayoutParams(mLayoutParams);
             mLeftTextView.requestLayout();
@@ -140,185 +145,243 @@ public class CommonTopBar extends FrameLayout {
 
     /**
      * set
+     *
      * @param lenth
      */
-    public void setMidTextMaxLenth(int lenth){
-        if(mMidTextView != null)
+    public void setMidTextMaxLenth(int lenth) {
+        if (mMidTextView != null)
             mMidTextView.setFilters(new InputFilter[]{new InputFilter.LengthFilter(lenth)});
     }
 
     /**
      * set mid view text
+     *
      * @param charSequence
      */
-    public void setMidText(CharSequence charSequence){
-        if(mMidTextView != null)
-             mMidTextView.setText(charSequence);
+    public void setMidText(CharSequence charSequence) {
+        if (mMidTextView != null)
+            mMidTextView.setText(charSequence);
     }
+
     /**
      * set mid view text
+     *
      * @param textRes
      */
-    public void setMidText(@StringRes int textRes){
-        if(mMidTextView != null)
+    public void setMidText(@StringRes int textRes) {
+        if (mMidTextView != null)
             mMidTextView.setText(textRes);
     }
 
     /**
      * set mid text size
+     *
      * @param size
      */
-    public void setMidTextSize(float size){
-        if(mMidTextView != null)
+    public void setMidTextSize(float size) {
+        if (mMidTextView != null)
             mMidTextView.setTextSize(size);
     }
 
     /**
      * set mid text color
+     *
      * @param colorStateList
      */
-    public void setMidTextColor(@NonNull ColorStateList colorStateList){
-        if(mMidTextView != null)
+    public void setMidTextColor(@NonNull ColorStateList colorStateList) {
+        if (mMidTextView != null)
             mMidTextView.setTextColor(colorStateList);
     }
+
     /**
      * set mid text color
+     *
      * @param color
      */
-    public void setMidTextColor(@ColorInt int color){
-        if(mMidTextView != null)
+    public void setMidTextColor(@ColorInt int color) {
+        if (mMidTextView != null)
             mMidTextView.setTextColor(color);
     }
 
     /**
      * set left image
+     *
      * @param drawable
      */
-    public void setLeftImage(@NonNull Drawable drawable){
+    public void setLeftImage(@NonNull Drawable drawable) {
         if (mLeftTextView != null) {
-            if(Build.VERSION.SDK_INT < 16) {
+            if (Build.VERSION.SDK_INT < 16) {
                 mLeftTextView.setBackgroundDrawable(drawable);
             } else {
                 mLeftTextView.setBackground(drawable);
             }
         }
     }
+
     /**
      * set left image
+     *
      * @param drawableRes
      */
-    public void setLeftImage(@DrawableRes int drawableRes){
+    public void setLeftImage(@DrawableRes int drawableRes) {
         if (mLeftTextView != null)
             mLeftTextView.setBackgroundResource(drawableRes);
     }
 
     /**
      * set left view text
+     *
      * @param charSequence
      */
-    public void setLeftText(CharSequence charSequence){
-        if(mLeftTextView != null)
+    public void setLeftText(CharSequence charSequence) {
+        if (mLeftTextView != null)
             mLeftTextView.setText(charSequence);
     }
+
     /**
      * set left view text
+     *
      * @param textRes
      */
-    public void setLeftText(@StringRes int textRes){
-        if(mLeftTextView != null)
+    public void setLeftText(@StringRes int textRes) {
+        if (mLeftTextView != null)
             mLeftTextView.setText(textRes);
     }
 
     /**
      * set left text size
+     *
      * @param size
      */
-    public void setLeftTextSize(float size){
-        if(mLeftTextView != null)
+    public void setLeftTextSize(float size) {
+        if (mLeftTextView != null)
             mLeftTextView.setTextSize(size);
     }
 
     /**
      * set left text color
+     *
      * @param colorStateList
      */
-    public void setLeftTextColor(@NonNull ColorStateList colorStateList){
-        if(mLeftTextView != null)
+    public void setLeftTextColor(@NonNull ColorStateList colorStateList) {
+        if (mLeftTextView != null)
             mLeftTextView.setTextColor(colorStateList);
     }
+
     /**
      * set left text color
+     *
      * @param color
      */
-    public void setLeftTextColor(@ColorInt int color){
-        if(mLeftTextView != null)
+    public void setLeftTextColor(@ColorInt int color) {
+        if (mLeftTextView != null)
             mLeftTextView.setTextColor(color);
     }
 
 
     /**
      * set right image
+     *
      * @param drawable
      */
-    public void setRightImage(@NonNull Drawable drawable){
+    public void setRightImage(@NonNull Drawable drawable) {
         if (mRightTextView != null) {
-            if(Build.VERSION.SDK_INT < 16) {
+            if (Build.VERSION.SDK_INT < 16) {
                 mRightTextView.setBackgroundDrawable(drawable);
             } else {
                 mRightTextView.setBackground(drawable);
             }
         }
     }
+
     /**
      * set right image
+     *
      * @param drawableRes
      */
-    public void setRightImage(@DrawableRes int drawableRes){
+    public void setRightImage(@DrawableRes int drawableRes) {
         if (mRightTextView != null)
             mRightTextView.setBackgroundResource(drawableRes);
     }
 
     /**
      * set right view text
+     *
      * @param charSequence
      */
-    public void setRightText(CharSequence charSequence){
-        if(mRightTextView != null)
+    public void setRightText(CharSequence charSequence) {
+        if (mRightTextView != null)
             mRightTextView.setText(charSequence);
     }
+
     /**
      * set right view text
+     *
      * @param textRes
      */
-    public void setRightText(@StringRes int textRes){
-        if(mRightTextView != null)
+    public void setRightText(@StringRes int textRes) {
+        if (mRightTextView != null)
             mRightTextView.setText(textRes);
     }
 
     /**
      * set right text size
+     *
      * @param size
      */
-    public void setRightTextSize(float size){
-        if(mRightTextView != null)
+    public void setRightTextSize(float size) {
+        if (mRightTextView != null)
             mRightTextView.setTextSize(size);
     }
 
     /**
      * set right text color
+     *
      * @param colorStateList
      */
-    public void setRightTextColor(@NonNull ColorStateList colorStateList){
-        if(mRightTextView != null)
+    public void setRightTextColor(@NonNull ColorStateList colorStateList) {
+        if (mRightTextView != null)
             mRightTextView.setTextColor(colorStateList);
     }
+
     /**
      * set right text color
+     *
      * @param color
      */
-    public void setRightTextColor(@ColorInt int color){
-        if(mRightTextView != null)
+    public void setRightTextColor(@ColorInt int color) {
+        if (mRightTextView != null)
             mRightTextView.setTextColor(color);
+    }
+
+    /**
+     * set DrawPadding
+     *
+     * @param size dp
+     */
+    public void setLefTextViewDrawPadding(int size) {
+        if (mLeftTextView != null)
+            mLeftTextView.setCompoundDrawablePadding(DensityUtils.dp2px(mContext, size));
+    }
+
+    /**
+     * set left drawImg
+     *
+     * @param drawableRes
+     */
+    public void setLeftTextViewDrawLeft(@DrawableRes int drawableRes) {
+        if (mLeftTextView != null)
+            mLeftTextView.setCompoundDrawablesWithIntrinsicBounds(drawableRes, 0, 0, 0);
+    }
+
+    /**
+     * set left drawImg
+     *
+     * @param drawableRes
+     */
+    public void setLeftTextViewDrawLeft(@NonNull Drawable drawableRes) {
+        if (mLeftTextView != null)
+            mLeftTextView.setCompoundDrawablesWithIntrinsicBounds(drawableRes, null, null, null);
     }
 }
 
