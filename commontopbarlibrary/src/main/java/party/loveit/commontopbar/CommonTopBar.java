@@ -70,6 +70,9 @@ public class CommonTopBar extends FrameLayout {
         mMidTextView = view.findViewById(R.id.common_top_bar_text_mid);
         mRightTextView = view.findViewById(R.id.common_top_bar_text_right);
         mRightImg = view.findViewById(R.id.common_top_bar_img_right);
+
+        mLeftImg = view.findViewById(R.id.common_top_bar_img_left);
+
         mLeftImg.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -78,8 +81,6 @@ public class CommonTopBar extends FrameLayout {
                     mCommonTopBarClick.onClickLeft();
             }
         });
-        mLeftImg = view.findViewById(R.id.common_top_bar_img_left);
-
         mRightImg.setOnClickListener(new OnClickListener() {
 
             @Override
