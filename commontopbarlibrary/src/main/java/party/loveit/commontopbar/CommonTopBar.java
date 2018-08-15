@@ -15,6 +15,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -29,6 +30,9 @@ public class CommonTopBar extends FrameLayout {
     private CommonTopBarClick mCommonTopBarClick;
     private TextView mMidTextView;//middle view
     private TextView mRightTextView;//right view
+
+    private ImageView mRightImg;
+    private ImageView mLeftImg;
 
 
     public CommonTopBar(Context context) {
@@ -54,7 +58,7 @@ public class CommonTopBar extends FrameLayout {
     private void initView() {
         View view = ((Activity) mContext).getLayoutInflater().inflate(R.layout.common_bar_layout, null);
 
-        mLeftTextView = (TextView) view.findViewById(R.id.common_top_bar_text_left);
+        mLeftTextView = view.findViewById(R.id.common_top_bar_text_left);
         mLeftTextView.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -63,9 +67,27 @@ public class CommonTopBar extends FrameLayout {
                     mCommonTopBarClick.onClickLeft();
             }
         });
-        mMidTextView = (TextView) view.findViewById(R.id.common_top_bar_text_mid);
-        mRightTextView = (TextView) view.findViewById(R.id.common_top_bar_text_right);
+        mMidTextView = view.findViewById(R.id.common_top_bar_text_mid);
+        mRightTextView = view.findViewById(R.id.common_top_bar_text_right);
+        mRightImg = view.findViewById(R.id.common_top_bar_img_right);
+        mLeftImg.setOnClickListener(new OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                if (mCommonTopBarClick != null)
+                    mCommonTopBarClick.onClickLeft();
+            }
+        });
+        mLeftImg = view.findViewById(R.id.common_top_bar_img_left);
+
+        mRightImg.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (mCommonTopBarClick != null)
+                    mCommonTopBarClick.onClickRight();
+            }
+        });
         mRightTextView.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -91,6 +113,11 @@ public class CommonTopBar extends FrameLayout {
             mRightTextView.setVisibility(isShow ? View.VISIBLE : View.GONE);
     }
 
+    public void isShowRightImgView(boolean isShow) {
+        if (mRightImg != null)
+            mRightImg.setVisibility(isShow ? View.VISIBLE : View.GONE);
+    }
+
     /**
      * 设if show left view,default gone
      *
@@ -100,6 +127,12 @@ public class CommonTopBar extends FrameLayout {
         if (mLeftTextView != null)
             mLeftTextView.setVisibility(isShow ? View.VISIBLE : View.GONE);
     }
+
+    public void isShowLeftImgView(boolean isShow) {
+        if (mLeftImg != null)
+            mLeftImg.setVisibility(isShow ? View.VISIBLE : View.GONE);
+    }
+
 
 
     /*public CommonTopBarClick getCommonTopBarClick() {
@@ -129,6 +162,15 @@ public class CommonTopBar extends FrameLayout {
         }
     }
 
+    public void addRightImgMargin(float marginRight) {
+        if (mRightImg != null) {
+            RelativeLayout.LayoutParams mLayoutParams = (android.widget.RelativeLayout.LayoutParams) mRightImg.getLayoutParams();
+            mLayoutParams.rightMargin = DensityUtils.dp2px(mContext, marginRight);
+            mRightImg.setLayoutParams(mLayoutParams);
+            mRightImg.requestLayout();
+        }
+    }
+
     /**
      * set left view margin left,the param is dp
      *
@@ -142,6 +184,16 @@ public class CommonTopBar extends FrameLayout {
             mLeftTextView.requestLayout();
         }
     }
+
+    public void addLeftImgMargin(float marginLeft) {
+        if (mLeftImg != null) {
+            RelativeLayout.LayoutParams mLayoutParams = (android.widget.RelativeLayout.LayoutParams) mLeftImg.getLayoutParams();
+            mLayoutParams.leftMargin = DensityUtils.dp2px(mContext, marginLeft);
+            mLeftImg.setLayoutParams(mLayoutParams);
+            mLeftImg.requestLayout();
+        }
+    }
+
 
     /**
      * set
@@ -209,11 +261,11 @@ public class CommonTopBar extends FrameLayout {
      * @param drawable
      */
     public void setLeftImage(@NonNull Drawable drawable) {
-        if (mLeftTextView != null) {
+        if (mLeftImg != null) {
             if (Build.VERSION.SDK_INT < 16) {
-                mLeftTextView.setBackgroundDrawable(drawable);
+                mLeftImg.setBackgroundDrawable(drawable);
             } else {
-                mLeftTextView.setBackground(drawable);
+                mLeftImg.setBackground(drawable);
             }
         }
     }
@@ -224,8 +276,8 @@ public class CommonTopBar extends FrameLayout {
      * @param drawableRes
      */
     public void setLeftImage(@DrawableRes int drawableRes) {
-        if (mLeftTextView != null)
-            mLeftTextView.setBackgroundResource(drawableRes);
+        if (mLeftImg != null)
+            mLeftImg.setBackgroundResource(drawableRes);
     }
 
     /**
@@ -285,11 +337,11 @@ public class CommonTopBar extends FrameLayout {
      * @param drawable
      */
     public void setRightImage(@NonNull Drawable drawable) {
-        if (mRightTextView != null) {
+        if (mRightImg != null) {
             if (Build.VERSION.SDK_INT < 16) {
-                mRightTextView.setBackgroundDrawable(drawable);
+                mRightImg.setBackgroundDrawable(drawable);
             } else {
-                mRightTextView.setBackground(drawable);
+                mRightImg.setBackground(drawable);
             }
         }
     }
@@ -300,8 +352,8 @@ public class CommonTopBar extends FrameLayout {
      * @param drawableRes
      */
     public void setRightImage(@DrawableRes int drawableRes) {
-        if (mRightTextView != null)
-            mRightTextView.setBackgroundResource(drawableRes);
+        if (mRightImg != null)
+            mRightImg.setBackgroundResource(drawableRes);
     }
 
     /**
@@ -383,5 +435,6 @@ public class CommonTopBar extends FrameLayout {
         if (mLeftTextView != null)
             mLeftTextView.setCompoundDrawablesWithIntrinsicBounds(drawableRes, null, null, null);
     }
+
 }
 

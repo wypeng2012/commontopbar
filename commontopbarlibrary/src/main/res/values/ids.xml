@@ -4,5 +4,7 @@
     <item name="common_top_bar_text_left" type="id"/>
     <item name="common_top_bar_text_mid" type="id"/>
     <item name="common_top_bar_text_right" type="id"/>
+    <item name="common_top_bar_img_right" type="id"/>
+    <item name="common_top_bar_img_left" type="id"/>
 
 </resources>

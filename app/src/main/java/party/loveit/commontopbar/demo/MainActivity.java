@@ -22,12 +22,13 @@ public class MainActivity extends AppCompatActivity implements CommonTopBarClick
         mCommonTopBar.setCommonTopBarClick(this);
         mCommonTopBar.setMidTextMaxLenth("TopBar".length());
         mCommonTopBar.setMidText("TopBar");
-        mCommonTopBar.isShowLeftView(true);
+        mCommonTopBar.isShowLeftImgView(true);
         mCommonTopBar.isShowRightView(true);
         //mCommonTopBar.setLeftTextSize(10);
-        mCommonTopBar.setLeftImage(R.mipmap.mobile_game_icon_activity_rank);
+       mCommonTopBar.setLeftImage(R.mipmap.mobile_game_icon_activity_rank);
         mCommonTopBar.setRightText("Log out");
-        mCommonTopBar.addLeftMargin(10);
+        //mCommonTopBar.setRightImage(R.mipmap.btn_addwallet_top_black);
+        mCommonTopBar.addLeftImgMargin(10);
         mCommonTopBar.addRightMargin(10);
 
     }
