@@ -129,6 +129,12 @@ public class CommonTopBar extends FrameLayout {
             mLeftTextView.setVisibility(isShow ? View.VISIBLE : View.GONE);
     }
 
+    public void setLeftTextBold(boolean isBold) {
+        if (mLeftTextView != null)
+            mLeftTextView.getPaint().setFakeBoldText(isBold);
+
+    }
+
     public void isShowLeftImgView(boolean isShow) {
         if (mLeftImg != null)
             mLeftImg.setVisibility(isShow ? View.VISIBLE : View.GONE);
@@ -216,6 +222,11 @@ public class CommonTopBar extends FrameLayout {
             mMidTextView.setText(charSequence);
     }
 
+    public void setMidTextBold(boolean isBold) {
+        if (mMidTextView != null)
+            mMidTextView.getPaint().setFakeBoldText(isBold);
+
+    }
     /**
      * set mid view text
      *
@@ -367,6 +378,11 @@ public class CommonTopBar extends FrameLayout {
             mRightTextView.setText(charSequence);
     }
 
+    public void setRightTextBold(boolean isBold) {
+        if (mRightTextView != null)
+            mRightTextView.getPaint().setFakeBoldText(isBold);
+
+    }
     /**
      * set right view text
      *
