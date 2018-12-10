@@ -1,4 +1,4 @@
-﻿# commontopbar
+# commontopbar
 
 [ ![Download](https://api.bintray.com/packages/loveit/maven/commontopbar/images/download.svg) ](https://bintray.com/loveit/maven/commontopbar/_latestVersion)
 
@@ -100,17 +100,17 @@ A common topBar library.It looks like android's title bar.
      <dependency>
       <groupId>party.loveit</groupId>
       <artifactId>commontopbarlibrary</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.5</version>
       <type>pom</type>
     </dependency>
     
  2.Gradle
 
-     compile 'party.loveit:commontopbarlibrary:1.0.1'
+     compile 'party.loveit:commontopbarlibrary:1.0.5'
      
 3.Ivy
 
-    <dependency org='party.loveit' name='commontopbarlibrary' rev='1.0.1'>
+    <dependency org='party.loveit' name='commontopbarlibrary' rev='1.0.5'>
       <artifact name='$AID' ext='pom'></artifact>
     </dependency>
     
