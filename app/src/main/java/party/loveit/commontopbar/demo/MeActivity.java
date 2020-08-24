@@ -1,8 +1,7 @@
 package party.loveit.commontopbar.demo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-
+import androidx.appcompat.app.AppCompatActivity;
 import party.loveit.commontopbar.CommonTopBar;
 import party.loveit.commontopbar.CommonTopBarClick;
 import qiu.niorgai.StatusBarCompat;

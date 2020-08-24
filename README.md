@@ -100,17 +100,17 @@ A common topBar library.It looks like android's title bar.
      <dependency>
       <groupId>party.loveit</groupId>
       <artifactId>commontopbarlibrary</artifactId>
-      <version>1.0.5</version>
+      <version>1.0.6</version>
       <type>pom</type>
     </dependency>
     
  2.Gradle
 
-     compile 'party.loveit:commontopbarlibrary:1.0.5'
+     compile 'party.loveit:commontopbarlibrary:1.0.6'
      
 3.Ivy
 
-    <dependency org='party.loveit' name='commontopbarlibrary' rev='1.0.5'>
+    <dependency org='party.loveit' name='commontopbarlibrary' rev='1.0.6'>
       <artifact name='$AID' ext='pom'></artifact>
     </dependency>
     
