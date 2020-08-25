@@ -7,12 +7,22 @@ A common topBar library.It looks like android's title bar.
 ![此处输入图片的描述][1]
 
 
-  [1]: https://github.com/wypeng2012/commontopbar/blob/master/screengif/ScreenGif.gif
+[1]: https://github.com/wypeng2012/commontopbar/blob/master/screengif/ScreenGif.gif
+
   
-  
- 
 
  **- Use It**
+
+**open Androidx support**
+
+gradle.properties
+
+```
+android.useAndroidX=true
+# Automatically convert third-party libraries to use AndroidX
+android.enableJetifier=true
+```
+
    1.in layout xml
 
           <party.loveit.commontopbar.CommonTopBar
@@ -20,18 +30,19 @@ A common topBar library.It looks like android's title bar.
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:background="@color/top_bar_bg_color"/>
-                
+
    2.your activity implements CommonTopBarClick interface,it has two methods
- 
+
 
          public interface CommonTopBarClick {
                 void onClickLeft();//click left view on CommonTopBar
                 void onClickRight();//click right view on CommonTopBar
          }
-         
-    
+
+
+​    
    3.set the listener in your code
-   
+
 
         mCommonTopBar = (CommonTopBar) findViewById(R.id.common);
         mCommonTopBar.setCommonTopBarClick(this);//of course you can not set it
@@ -40,9 +51,9 @@ A common topBar library.It looks like android's title bar.
     
         mCommonTopBar.isShowLeftView(true);
         mCommonTopBar.isShowRightView(true);
-        
+
   5.set text on left ,mid ,right view
- 
+
 
         setLeftText(CharSequence charSequence) //set left view text
         setLeftText(int textRes) //set left view text
@@ -52,26 +63,27 @@ A common topBar library.It looks like android's title bar.
         
         setRightText(CharSequence charSequence) //set right view text
         setRightText(int textRes) //set right view text
-        
-    
+
+
+​    
    6.set image on left ,right view
-    
+​    
         setLeftImage(android.graphics.drawable.Drawable drawable) //set left image
         setLeftImage(int drawableRes) //set left image
         
         setRightImage(android.graphics.drawable.Drawable drawable) //set right image
         setRightImage(int drawableRes) //set right image
-    
+
   7.set text size on left ,mid ,right view
     
- 
+
 
         setLeftTextSize(float size) //set left text size
            
         setMidTextSize(float size) //set mid text size
            
         setRightTextSize(float size) //set right text size
-        
+
  8.set text color on left ,mid ,right view
     
         setLeftTextColor(android.content.res.ColorStateList colorStateList) //set left text color
@@ -82,19 +94,19 @@ A common topBar library.It looks like android's title bar.
         
         setRightText(int textRes) //set right view text
         setRightTextColor(android.content.res.ColorStateList colorStateList) //set right text color
-        
+
 9.add margin on left,right view
     
         addLeftMargin(float marginLeft) //set left view margin left,the param is dp
         addRightMargin(float marginRight) //set right view margin right,the param is dp
-        
+
  10.control middle text max length 
     
         setMidTextMaxLenth(int lenth) //set middle text max length 
-        
+
 
  **- How to dependencies**
- 
+
   1.Maven
 
      <dependency>
@@ -103,20 +115,21 @@ A common topBar library.It looks like android's title bar.
       <version>1.0.6</version>
       <type>pom</type>
     </dependency>
-    
+
  2.Gradle
 
      compile 'party.loveit:commontopbarlibrary:1.0.6'
-     
+
 3.Ivy
 
     <dependency org='party.loveit' name='commontopbarlibrary' rev='1.0.6'>
       <artifact name='$AID' ext='pom'></artifact>
     </dependency>
-    
-    
-    
-    
+
+
+​    
+​    
+​    
 **- Update History**
 
     -v1.0.1
@@ -124,7 +137,7 @@ A common topBar library.It looks like android's title bar.
       1.setLefTextViewDrawPadding(int size) ；//set DrawPadding
       2.setLeftTextViewDrawLeft(@DrawableRes int drawableRes)；//set left drawImg
       3.setLeftTextViewDrawLeft(@NonNull Drawable drawableRes)；//set left drawImg
-      
+
 
  **- License**
 
